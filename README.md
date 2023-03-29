@@ -15,7 +15,8 @@
   - [シンボルを見つけられません JavaCrudApplication](#シンボルを見つけられません-javacrudapplication)
   - [シンボルを見つけられません Test](#シンボルを見つけられません-test)
   - [Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required](#property-sqlsessionfactory-or-sqlsessiontemplate-are-required)
-  - [](#)
+  - [NestedIOException](#nestedioexception)
+  - [Whitelabel Error Page しかでない](#whitelabel-error-page-しかでない)
 
 <!-- /TOC -->
 
@@ -152,8 +153,14 @@ import org.springframework.context.annotation.ComponentScan;
 
 を記載して OK。
 
-###
+### NestedIOException
 
 ```
 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/config/MyBatisConfig.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: org/springframework/core/NestedIOException
 ```
+
+mapping を xml で適切に配置して解決
+
+### Whitelabel Error Page しかでない
+
+html ファイルを`src/main/resources/static/`配下に移動して解決
