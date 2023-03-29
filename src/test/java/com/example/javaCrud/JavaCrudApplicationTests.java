@@ -1,7 +1,8 @@
 package com.example.javaCrud;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import com.example.javaCrud.JavaCrudApplication;
+import org.junit.Test;
 
 @SpringBootTest
 class JavaCrudApplicationTests {
