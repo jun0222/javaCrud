@@ -15,15 +15,25 @@
   <body>
     <h2>登録</h2>
     <form th:action="@{/create}" th:object="${person}" method="post">
+      <!-- 名前の入力フォーム -->
       <label>名前</label>
       <input type="text" th:field="*{name}" th:errorclass="invalid" /><br />
+      <!-- 名前に関するバリデーションエラーメッセージ -->
       <div class="red" th:errors="*{name}"></div>
+
+      <!-- 年齢の入力フォーム -->
       <label>年齢</label>
       <input type="number" th:field="*{age}" th:errorclass="invalid" /><br />
+      <!-- 年齢に関するバリデーションエラーメッセージ -->
       <div class="red" th:errors="*{age}"></div>
+
+      <!-- メールアドレスの入力フォーム -->
       <label>メールアドレス</label>
       <input type="email" th:field="*{email}" th:errorclass="invalid" /><br />
+      <!-- メールアドレスに関するバリデーションエラーメッセージ -->
       <div class="red" th:errors="*{email}"></div>
+
+      <!-- 送信ボタン -->
       <button>送信</button>
     </form>
 
@@ -37,12 +47,19 @@
           <td>email</td>
         </tr>
       </thead>
+      <!-- リストの要素をループで回し、1件ずつテーブルの行に出力する -->
       <tr th:each="person : ${people}">
+        <!-- IDを表示 -->
         <td>[[${person.id}]]</td>
+        <!-- 名前を表示 -->
         <td>[[${person.name}]]</td>
+        <!-- 年齢を表示 -->
         <td>[[${person.age}]]</td>
+        <!-- メールアドレスを表示 -->
         <td>[[${person.email}]]</td>
+        <!-- 編集ページへのリンクを表示 -->
         <td><a th:href="@{/edit/{id}(id=${person.id})}">編集</a></td>
+        <!-- 削除ページへのリンクを表示 -->
         <td><a th:href="@{/delete/{id}(id=${person.id})}">削除</a></td>
       </tr>
     </table>

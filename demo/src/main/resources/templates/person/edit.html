@@ -14,6 +14,8 @@
   </head>
   <body>
     <h2>編集</h2>
+    <!--更新処理を呼び出すURLを指定。で囲んだ部分には変数idが入る-->
+    <!--formにバインドするオブジェクトを指定-->
     <form
       th:action="@{/update/{id}(id=${id})}"
       th:object="${person}"
@@ -21,17 +23,24 @@
     >
       <label>名前</label>
       <input type="text" th:field="*{name}" th:errorclass="invalid" /><br />
+      <!--テキストボックスを表示。nameプロパティにバインドする-->
       <div class="red" th:errors="*{name}"></div>
+      <!--バリデーションエラーがあればメッセージを表示-->
 
       <label>年齢</label>
       <input type="number" th:field="*{age}" th:errorclass="invalid" /><br />
+      <!--数値入力欄を表示。ageプロパティにバインドする-->
       <div class="red" th:errors="*{age}"></div>
+      <!--バリデーションエラーがあればメッセージを表示-->
 
       <label>メールアドレス</label>
       <input type="email" th:field="*{email}" th:errorclass="invalid" /><br />
+      <!--メールアドレス入力欄を表示。emailプロパティにバインドする-->
       <div class="red" th:errors="*{email}"></div>
+      <!--バリデーションエラーがあればメッセージを表示-->
 
       <button>送信</button>
+      <!--フォームを送信するためのボタンを表示-->
     </form>
   </body>
 </html>

@@ -5,7 +5,10 @@
     <title>Hello World</title>
   </head>
   <body>
+    <!-- モデル属性 "message" の値を表示する Thymeleafの構文 -->
     <h1 th:text="${message}"></h1>
+
+    <!-- モデル属性 "message" の値を表示する (二重括弧の表記) Thymeleafの構文 -->
     <p>[[${ message }]]</p>
   </body>
 </html>
